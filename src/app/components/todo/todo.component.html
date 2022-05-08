@@ -1,0 +1,19 @@
+
+<div class="input-group mt-5 w-25 container d-flex " *ngIf="scompare">
+  <p class="text-center fs-4" *ngIf="todos.length==0?true:false">OPS! Non ci sono task</p>
+  <div class="d-flex">
+    <input type="text" class="form-control" placeholder="Inserisci task" [(ngModel)]="newTask">
+    <button class="btn btn-outline-success" (click)="aggiungiTask()" type="button" id="button-addon2">Aggiungi</button>
+  </div>
+</div>
+<div class="container w-25" *ngIf="scompare">
+  <ul>
+    <li class="mt-2" *ngFor="let todo of todos"> {{ todo.title }} <button class="btn btn-light" (click)="inCompletati(todo)">✅</button></li>
+  </ul>
+</div>
+
+<p class="text-center mt-4 fs-2" *ngIf="!scompare">Recupero task...</p>
+
+
+<ng-template ></ng-template>
+
